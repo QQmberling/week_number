@@ -5,7 +5,6 @@ from flask_wtf import FlaskForm
 from wtforms import DateField, SubmitField
 from wtforms.validators import DataRequired
 
-
 REFERENCE_DATE = datetime.date(2018, 12, 30)
 
 
@@ -28,7 +27,7 @@ def get_week_number(desire_date, reference_date=REFERENCE_DATE):
     amount_of_days = (desire_date - reference_date).days
     if amount_of_days < 0:
         return 1
-    return amount_of_days//7 + 1
+    return amount_of_days // 7 + 1
 
 
 app = Flask(__name__, template_folder='templates')

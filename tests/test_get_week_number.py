@@ -1,7 +1,7 @@
 import datetime
+from datetime import date
 
 from run import get_week_number
-from datetime import date
 
 AMOUNT_WEEKS = 5000
 
@@ -20,13 +20,13 @@ def test_first_week():
 
 def test_second_week():
     for i in range(7):
-        assert get_week_number(date(2018, 12, 30) + datetime.timedelta(days=7+i)) == 2
+        assert get_week_number(date(2018, 12, 30) + datetime.timedelta(days=7 + i)) == 2
 
 
 def test_every_week(amount=AMOUNT_WEEKS):
     """ Тест {amount} недель после начальной даты
     """
-    for week_num in range(1, amount+1):
+    for week_num in range(1, amount + 1):
         ith_week(week_num)
 
 
