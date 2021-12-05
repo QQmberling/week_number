@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for field in form if field.name not in ['csrf_token', 'submit'] -%}
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <div class='alert alert-danger px-5 m-2'>
+                {{ error }}
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+<form action="" method="POST">
+    {{form.hidden_tag()}}
+    <p class="fs-4 p-2">{{form.date()}} {{form.submit()}}</p>
+    <p> Номер недели - {{week_number}}</p>
+</form>
+
+</body>
+</html>
