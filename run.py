@@ -18,7 +18,7 @@ class DateForm(FlaskForm):
             self.date.data = datetime.date.today()
 
 
-def get_week_number(desire_date, reference_date=REFERENCE_DATE):
+def get_week_number(desire_date: datetime.date, reference_date: datetime.date = REFERENCE_DATE) -> int:
     """
     :param desire_date: Желаемая дата, для которой надо узнать номер недели
     :param reference_date: Дата отсчета
